@@ -25,4 +25,32 @@ rails g migration add_user_references_to_ideas user:references
 ```
 
 
+#begin working on views
+-added "navbar will go here" in application.html.erb file 
+-added "all the ideas will get listed here" in index.html.erb file
+-this was done purely for placeholding purposes
+-when server is run, both those lines show up
+
+#boostrap integration
+```shell
+
+#installed gem:
+gem 'bootstrap-sass', '~> 3.3.3'
+
+#ran bundle install
+
+
+#created a new file called "b00tstrapzz.css.scss" inside the app/assets/stylesheets folder
+
+#inside that file put this:
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+#that file gets run thanks to the app/assets/appliation.css file - thats the manifest file for all css docs in this rails project, it has a line that says requires tree meaning all css files within the stylesheets folder get read as long as that manifest file is there.
+
+```
+
+
+
 
