@@ -3,6 +3,6 @@
 <%=idea.title%><br></div>
 <%= idea.explanation%>
 <br><br>
-By:<%= idea.user_id %>
+By:<%= idea.user.email if idea.user %>
 <hr>
 <%end%>
