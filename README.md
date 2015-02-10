@@ -51,6 +51,47 @@ gem 'bootstrap-sass', '~> 3.3.3'
 
 ```
 
+working on views:
+-inside the application.html.erb file, which shows on every page, added an image, a button for new idea, and login and logout options:
+
+#adding image:
+```shell
+save image inside the app/assets/images folder
+refereence image from the desired view(in our case application.html.erb) using image_tag :
+
+<%=image_tag 'ideafactory.png'%>
+
+#thats it!
+
+```
+
+#adding new idea link button:
+
+```shell
+use link_to tag, and wrap it in div with class btn btn default (provided by bootstrap)
+
+
+    <% if user_signed_in? %>
+
+      <%=link_to 'Logout', 
+      destroy_user_session_path, 
+      :method => :delete %>
+      
+      <%else%> 
+      
+      <%=link_to 'Login', 
+      new_user_session_path%>
+      <%end%>
+      
+      <div class=  "btn btn-default">
+
+      <%=link_to 'New Idea', new_idea_path%> </div>
+  </div>
+```
+##user_signed_in ? is provided by devise, destroy_user_session_path and new_user_session_path can be picked up from the routes
+
+#displaying all ideas
+-done in the index action of the ideas controller
 
 
 
