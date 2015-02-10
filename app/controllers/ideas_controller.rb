@@ -11,6 +11,8 @@ class IdeasController < ApplicationController
 
   end
 
+  
+
   def new
     # render text: "create a new project"
     @idea = Idea.new
