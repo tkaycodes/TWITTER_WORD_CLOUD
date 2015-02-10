@@ -10,19 +10,22 @@
 
 <!-- NAVBAR ######################################## -->
 <div class="navbar navbar-default">
-    <%=image_tag 'ideafactory.png'%>
+    <%=image_tag 'ideafactory.png', id: "imagemod"%>
     <div id="scootover">
-      <% if user_signed_in? %>
-        Hello: <%=current_user%>
-        <%=link_to 'Logout', 
-        destroy_user_session_path, 
-       :method => :delete %>
-       <%else%> 
-       <%=link_to 'Login', 
-       new_user_session_path%>
-       <%end%><br>
-      <br><br><div class=  "btn btn-default">
-      <%=link_to 'New Idea', new_idea_path%> </div>
+        <div id="signinsignout"> 
+            <%if user_signed_in? %>
+              Hello: <%=current_user%>
+              <%=link_to 'Logout', 
+              destroy_user_session_path, 
+              :method => :delete %>
+              <%else%> 
+              <%=link_to 'Login', 
+              new_user_session_path%>
+            <%end%><br><br><br>
+        </div>
+            <div class=  "btn btn-default">
+            <%=link_to 'New Idea', 
+            new_idea_path%> </div>
     </div>
 </div>
 <!-- ############################################### -->

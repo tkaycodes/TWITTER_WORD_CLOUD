@@ -16,7 +16,21 @@
 
 .btn{
   float:right;
+  margin-right:10px;
+  margin-bottom:10px;
 }
 
+#signinsignout{
+  padding-top:10px;
+  padding-right:10px;
 
+}
 
+.navbar{
+  padding-bottom: 10px;
+}
+
+#imagemod{
+  height:105px;
+  width:115px;
+}
