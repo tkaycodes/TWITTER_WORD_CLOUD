@@ -4,8 +4,6 @@ class IdeasController < ApplicationController
     # render text: "hello world"
     @ideas = Idea.all
     
-
-    
     # <%if user_signed_in? %>
     #   current_user.id 
     # <%end%>
@@ -20,7 +18,8 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.new(params.require(:idea).permit(:title, :explanation))
-    @idea.user_id=current_user.id
+    # @idea.user_id=current_user.id
+    @idea.user = current_user #this line is what associates the idea with the user
     if @idea.save
     redirect_to root_path, notice: "idea created!"
     else

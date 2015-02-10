@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
 
 
 
-  has_many :Ideas
+  has_many :ideas
   
 end
