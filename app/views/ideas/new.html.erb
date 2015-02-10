@@ -1,1 +1,13 @@
-create a new project tho
+<div class="container form-group">
+  <h5> Post up a new idea: </h5>
+  <%=form_for @idea do |i| %>
+  <%=i.label :Title %>
+  <%=i.text_field :title, class: "form-control" %>
+  <br>
+  <%=i.label :explanation %>
+  <%=i.text_area :explanation, class: "form-control" %>
+  <%=i.submit "Post Idea"%>
+  <%end%>
+</div>
+
+

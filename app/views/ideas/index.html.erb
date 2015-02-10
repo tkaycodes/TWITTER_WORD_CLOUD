@@ -1,8 +1,8 @@
 <% @ideas.each do |idea| %>
 <div class="ideatitle">
 <%=idea.title%><br></div>
-<div class="ideabody">
-<%= idea.explanation%></div>
-Username:<%= idea.user_id %>
+<%= idea.explanation%>
+<br><br>
+By:<%= idea.user_id %>
 <hr>
 <%end%>
