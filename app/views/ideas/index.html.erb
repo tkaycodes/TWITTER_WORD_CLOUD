@@ -1,1 +1,10 @@
-<h1>all the ideas will get listed here</h1>
+<br><br><br>
+<hr>
+<% @ideas.each do |idea| %>
+<div class="ideatitle">
+<%=idea.title%><br></div>
+<div class="ideabody">
+<%= idea.explanation%></div>
+Username:<%= idea.user_id %>
+<hr>
+<%end%>

@@ -4,10 +4,28 @@
   <title>Ideafactory</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 
-  <h1> NAVBAR WILL GO HERE </h1>
-  <hr>
+
+<!-- NAVBAR ######################################## -->
+<%=image_tag 'ideafactory.png'%>
+
+  <div id="scootover">
+    <% if user_signed_in? %>
+      Hello: <%=current_user%>
+      <%=link_to 'Logout', 
+      destroy_user_session_path, 
+      :method => :delete %>
+      <%else%> 
+      <%=link_to 'Login', 
+      new_user_session_path%>
+    <%end%><br>
+      <div class=  "btn btn-default">
+      <%=link_to 'New Idea', new_idea_path%> </div>
+  </div>
+<!-- ############################################### -->
+  
 </head>
 <body>
 

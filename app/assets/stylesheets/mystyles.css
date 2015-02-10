@@ -1,0 +1,22 @@
+.ideatitle{
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.ideabody{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.userinfo{
+  text-indent: 50px;
+}
+
+#scootover{
+  float:right;
+}
+
+.btn{
+  float:right;
+}
+
+
+
