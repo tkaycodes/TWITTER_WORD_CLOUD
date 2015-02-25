@@ -7,8 +7,6 @@ class IdeasController < ApplicationController
     # <%if user_signed_in? %>
     #   current_user.id 
     # <%end%>
-
-
   end
 
   
