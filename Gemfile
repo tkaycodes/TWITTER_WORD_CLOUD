@@ -30,6 +30,7 @@ gem 'hirb'
 gem 'interactive_editor'
 gem 'awesome_print'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'omniauth-twitter'
 #====================================
 
 # Use ActiveModel has_secure_password
