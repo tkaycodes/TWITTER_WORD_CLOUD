@@ -21,6 +21,9 @@
               <%else%>
               <%=link_to 'Login', 
               new_user_session_path%>
+
+              <%=link_to "Sign in with twitter", user_omniauth_authorize_path(provider: :twitter)%>
+
             <%end%><br><br><br>
         </div>
             <div class=  "btn btn-default">
