@@ -15,6 +15,14 @@
         <div id="signinsignout"> 
             <%if user_signed_in? %>
               Hello&nbsp;<%=current_user.first_name%>&nbsp;&nbsp;
+
+ <%if current_user.omniauth_raw_data.present?%>
+
+ <%=image_tag current_user.omniauth_raw_data["info"]["image"] %>
+ <%end%>
+
+
+
               <%=link_to 'Logout', 
               destroy_user_session_path, 
               :method => :delete %>

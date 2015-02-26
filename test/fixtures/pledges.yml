@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  stripe_txn_id: MyString
+  aasm_state: MyString
+  user_id: 
+  idea_id: 
+
+two:
+  amount: 1
+  stripe_txn_id: MyString
+  aasm_state: MyString
+  user_id: 
+  idea_id: 

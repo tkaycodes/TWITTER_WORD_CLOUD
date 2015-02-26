@@ -4,16 +4,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :ideas
+  has_many :ideas, dependent: :destroy
   
-  serialize :omniauth_data
+  serialize :omniauth_raw_data, Hash
 
   def email_required?
     false
   end
 
   def password_required?
-    provide.nil?
+    provider.nil?
   end
 
 
