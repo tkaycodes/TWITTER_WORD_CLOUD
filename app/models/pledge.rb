@@ -9,8 +9,8 @@ class Pledge < ActiveRecord::Base
 
   aasm do 
     state :pending, initial: true
-    state :paid,
-    state :cancelled,
+    state :paid
+    state :cancelled
     state :refunded
 
     event :pay do

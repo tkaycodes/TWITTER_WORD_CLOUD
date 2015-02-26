@@ -4,6 +4,7 @@
 <%= idea.explanation%>
 <br><br>
 <!-- By:<%#= idea.user.email if idea.user %>  -->
-By:<%= idea.user.first_name if idea.user%>
+By:<%= idea.user.first_name if idea.user%><br>
+<%= link_to "Pledge",new_idea_pledge_path(idea), class: "btn btn-primary btn-small"%>
 <hr>
 <%end%>

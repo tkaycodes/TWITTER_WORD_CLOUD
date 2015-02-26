@@ -1,0 +1,11 @@
+<div class="form-field">
+
+<%= form_for [@idea, @pledge], url: idea_pledges_path do |f|%>
+  <%= f.label :amount%>
+  <%= f.text_area :amount, class:"form-control"%>
+  <br>
+  <%= f.submit "pledge now", class:"btn btn-default changed"%>
+<%end%> 
+
+</div>
+
