@@ -31,6 +31,7 @@ gem 'interactive_editor'
 gem 'awesome_print'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'omniauth-twitter'
+gem 'aasm'
 #====================================
 
 # Use ActiveModel has_secure_password
