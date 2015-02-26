@@ -1,1 +1,20 @@
 <h1> PAY NOW </h1>
+
+<!-- credit card form  will go here -->
+<!-- will make 2 forms, goes for the js to stripe
+  stripe will return a token back (verifying cc info)
+one goes ruby to app -->
+  <!-- this one takes that token and passes it to our rails app to use
+
+  then back to regular stuff (connecting to stripe like we did in twitter using first initializer files we created) -->
+
+
+<%=simple_form_for "" do |f| %>
+
+  <%=f.input :card_number %>
+  <div class="form-group"%>
+    <%=f.label :expiry_date %>
+    <%=select_month nil, {add_month_number: true}, 
+      {class:"form-control"}%>
+    </div>
+<%end%>
