@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :ideas, dependent: :destroy
+
+  has_many :pledges, dependent: :nullify
   
   serialize :omniauth_raw_data, Hash
 
