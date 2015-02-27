@@ -1,5 +1,7 @@
 <h1> PAY NOW </h1>
 
+
+<div id="stripe-errors"><%=@error_messag%></div>
 <!-- credit card form  will go here -->
 <!-- will make 2 forms, goes for the js to stripe
   stripe will return a token back (verifying cc info)
@@ -8,13 +10,22 @@ one goes ruby to app -->
 
   then back to regular stuff (connecting to stripe like we did in twitter using first initializer files we created) -->
 
+<%= simple_form_for "", url: pledge_payments_path(@pledge), method: :post,
+    html: {id: "token-form"} do |f| %>
+<%=f.input :stripe_token, as: :hidden %>
+<%end%>
 
-<%=simple_form_for "" do |f| %>
-
+  <%=simple_form_for "", html: {id: "cc-form"} do |f| %>
   <%=f.input :card_number %>
   <div class="form-group"%>
     <%=f.label :expiry_date %>
-    <%=select_month nil, {add_month_number: true}, 
-      {class:"form-control"}%>
-    </div>
+    <%=select_month nil, {add_month_number: true},{class:"form-control"}%>
+    <%=select_year nil, {start_year: Date.today.year, end_year: (Date.today.year + 7)}, {class: "form-control"} %>
+  </div>
+    <%= f.input :cvc %>
+    <noscript>
+      Javascript Must be enabled for this form to work. Your Browser is realy old!! Note:Some blackberry devises dont support javascript
+    </noscript>
+    <%= f.submit "Submit", class: "btn btn-primary"%>
+
 <%end%>

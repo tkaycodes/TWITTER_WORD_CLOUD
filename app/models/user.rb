@@ -15,9 +15,8 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    provider.nil?
+    !email.nil?
   end
-
 
   def self.find_or_create_from_twitter(omniauth_data)
     user = User.where(provider: :twitter, uid: omniauth_data["uid"]).first

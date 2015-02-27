@@ -34,6 +34,7 @@ gem 'omniauth-twitter'
 gem 'aasm'
 gem 'stripe'
 gem 'simple_form'
+gem 'virtus'
 #====================================
 
 # Use ActiveModel has_secure_password
