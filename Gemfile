@@ -35,6 +35,7 @@ gem 'aasm'
 gem 'stripe'
 gem 'simple_form'
 gem 'virtus'
+gem  'twitter'
 #====================================
 
 # Use ActiveModel has_secure_password
