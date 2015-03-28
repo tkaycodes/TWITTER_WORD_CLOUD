@@ -34,3 +34,23 @@ body{
   height:105px;
   width:115px;
 }
+
+
+#bigkeys{
+  font-size:100px;
+  color:gray;
+}
+
+#smallkeys{
+  font-size:20px;
+}
+#keys{
+font-size:60px;
+color:red;
+}
+
+#keys2{
+  font-size:40px;
+  color:blue;
+}
+

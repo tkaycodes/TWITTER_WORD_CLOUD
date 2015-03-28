@@ -1,0 +1,46 @@
+<%#=@client.user_timeline%>
+
+<%#@client.user_timeline.each do |x|%>
+ <%#=x.text%> 
+<%#end%>
+
+
+<%@words_array = @client.user_timeline.collect{|x| x[:text]}%>
+<%#=@words_array%>
+
+<%string = @words_array.join(" ")%> 
+<%array_again=string.split%>
+<%=array_again%><hr>
+
+
+<%word_count_hash = Hash.new (0)%>
+<%array_again.each do |x|%>
+<%word_count_hash[x] +=1 %>
+<%end%>
+
+
+
+<%word_count_hash.each do |k,v|%>
+
+  <%if v >=5%>
+  <span id='bigkeys'>
+    <%=k%>
+  </span>
+
+  <%elsif v >= 3%>
+    <span id='keys'>
+      <%=k%>
+    </span>
+    <%elsif v>=2%>
+    <span id='keys2'>
+    <%=k%>
+    </span>
+    <%else%>
+    <span>
+    <%=k%>
+  </span>
+  <%end%>
+
+<%end%>
+
+

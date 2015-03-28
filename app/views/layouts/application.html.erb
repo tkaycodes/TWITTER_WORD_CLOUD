@@ -20,7 +20,8 @@
 
  <%if current_user.omniauth_raw_data.present?%>
 
- <%=image_tag current_user.omniauth_raw_data["info"]["image"] %>
+ <%=image_tag current_user.omniauth_raw_data["info"]["image"] %><br>
+ <%=link_to "tweet cloud", tweets_path%>
  <%end%>
 
 

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :ideas, dependent: :destroy
 
   has_many :pledges, dependent: :nullify
+
+  has_many :tweets
   
   serialize :omniauth_raw_data, Hash
 
@@ -34,6 +36,17 @@ class User < ActiveRecord::Base
     end
     user
   end
+
+  def tweets
+     @client ||= Twitter::REST::CLIENT.new do |config| 
+      config.consumer_key = ENV["TWITTER_API_KEY"]
+      config.consumer_secret = ENV["TWITTER_API_SECRET"]
+
+      config.access_token = ENV["TWITTER_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]  
+    end
+  end
+
 
 
 
