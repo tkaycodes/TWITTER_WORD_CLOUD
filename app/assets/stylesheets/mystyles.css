@@ -1,5 +1,7 @@
 body{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+    background:#3cf;
+
   }
 
 .ideatitle{
@@ -53,4 +55,12 @@ color:red;
   font-size:40px;
   color:blue;
 }
+
+
+#mainmessage{
+  color:white;
+  font-size: 50px;
+  text-align: center;
+}
+
 

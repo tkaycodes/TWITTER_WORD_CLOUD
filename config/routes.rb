@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users,
     controllers: {omniauth_callbacks:"users/omniauth_callbacks"}
-  root "ideas#index"
+  root "tweets#home"
   resources :ideas do
     resources :pledges, only: [:new, :create, :destroy, :index] 
   end

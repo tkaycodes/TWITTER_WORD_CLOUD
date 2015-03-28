@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'https://js.stripe.com/v1','data-turbolinks-track' => true %>
 
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+
   <%= csrf_meta_tags %>
 
   <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"]%>
@@ -12,7 +14,6 @@
 
 <!-- NAVBAR ######################################## -->
 <div class="navbar navbar-default">
-    <%=image_tag 'ideafactory.png', id: "imagemod"%>
     <div id="scootover">
         <div id="signinsignout"> 
             <%if user_signed_in? %>
@@ -21,7 +22,9 @@
  <%if current_user.omniauth_raw_data.present?%>
 
  <%=image_tag current_user.omniauth_raw_data["info"]["image"] %><br>
+ <div class="btn btn-default">
  <%=link_to "tweet cloud", tweets_path%>
+</div>
  <%end%>
 
 
@@ -30,16 +33,14 @@
               destroy_user_session_path, 
               :method => :delete %>
               <%else%>
-              <%=link_to 'Login', 
-              new_user_session_path%>
-
-              <%=link_to "Sign in with twitter", user_omniauth_authorize_path(provider: :twitter)%>
+            
+              <div class="btn btn-default">
+              <%=link_to "Connect Twitter", user_omniauth_authorize_path(provider: :twitter)%>
+            </div>
 
             <%end%><br><br><br>
         </div>
-            <div class=  "btn btn-default">
-            <%=link_to 'New Idea', 
-            new_idea_path%> </div>
+           
     </div>
 </div>
 <!-- ############################################### -->
