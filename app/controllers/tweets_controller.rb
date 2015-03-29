@@ -7,7 +7,8 @@ class TweetsController < ApplicationController
       config.access_token = "398471310-RES7sRpSpJWZ5LZLiCUUHiaGKRO3QjNCDqy36sv0";
       config.access_token_secret = "ayBE0gLPxHrYaTSLtdJbITQSUPRTf0PBzhpBn4yxcrBcu";
     end
-    render params[:homefeed] ? "homefeed" : "index"  
+            render params[:homefeed] ? "homefeed" : "index"  
+
   end
 
 
