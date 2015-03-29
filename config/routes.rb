@@ -3,13 +3,9 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: {omniauth_callbacks:"users/omniauth_callbacks"}
   root "tweets#home"
-  resources :ideas do
-    resources :pledges, only: [:new, :create, :destroy, :index] 
-  end
 
-  resources :pledges, only: [] do
-    resources :payments, only: [:new, :create]
-  end
+  
+
 
   resources :tweets, only: [:index]
 

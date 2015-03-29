@@ -12,8 +12,12 @@ body{
   text-indent: 50px;
 }
 
-#scootover{
-  float:right;
+#scootleft{
+  float:left;
+}
+
+#scootright{
+  float: right;
 }
 
 .btn{
@@ -37,25 +41,34 @@ body{
   width:115px;
 }
 
+#largekeys{
+  font-size:120px;
+  color:gray;
+}
 
-#bigkeys{
+#keys5{
   font-size:100px;
   color:gray;
 }
 
-#smallkeys{
-  font-size:20px;
+#keys4{
+  font-size:80px;
+  color:gray;
 }
-#keys{
+#keys3{
 font-size:60px;
-color:red;
+color:gray;
 }
 
 #keys2{
-  font-size:40px;
-  color:blue;
+font-size:40px;
+color:gray;
 }
 
+#keys1{
+  font-size:20px;
+  color:white;
+}
 
 #mainmessage{
   color:white;
@@ -63,4 +76,21 @@ color:red;
   text-align: center;
 }
 
+.center{
+  text-align: center;
+}
 
+.tweetwords{
+  text-align: justify;
+  border: 1px solid white;
+}
+
+.sidenav{
+    border: 1px solid white;
+
+}
+
+#tweetheading{
+font-size: 100px;
+color:gray;
+}
