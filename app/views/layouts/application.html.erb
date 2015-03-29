@@ -9,29 +9,34 @@
 
   <%= csrf_meta_tags %>
 
-  <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"]%>
 
 
 <!-- NAVBAR ######################################## -->
 <div class="navbar navbar-default">
-    <div id="scootover">
         <div id="signinsignout"> 
             <%if user_signed_in? %>
-              Hello&nbsp;<%=current_user.first_name%>&nbsp;&nbsp;
+            <div id="scootleft">
+              Signed in as: &nbsp;@<%=current_user.first_name%>&nbsp;&nbsp;
+            </div>
+
+<div id="scootright">
 
  <%if current_user.omniauth_raw_data.present?%>
 
- <%=image_tag current_user.omniauth_raw_data["info"]["image"] %><br>
- <div class="btn btn-default">
- <%=link_to "tweet cloud", tweets_path%>
-</div>
+ <%=image_tag current_user.omniauth_raw_data["info"]["image"] %>
+
  <%end%>
-
-
-
+              <div class="btn btn-default">
               <%=link_to 'Logout', 
               destroy_user_session_path, 
               :method => :delete %>
+            </div>
+
+
+          </div>
+
+
+
               <%else%>
             
               <div class="btn btn-default">
@@ -41,7 +46,6 @@
             <%end%><br><br><br>
         </div>
            
-    </div>
 </div>
 <!-- ############################################### -->
   
