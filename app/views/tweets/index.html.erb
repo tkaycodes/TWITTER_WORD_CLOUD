@@ -1,15 +1,13 @@
-<%#=@client.user_timeline%>
-
-<%#@client.user_timeline.each do |x|%>
- <%#=x.text%> 
-<%#end%>
-
-
 <%@words_array = @client.user_timeline.collect{|x| x[:text]}%>
+<%@sfa=@words_array.shuffle!%>
+<%@sfa.map! {|x| x.gsub(/(?:f|ht)tps?:\/[^\s]+/, "") } %>
+<%@sfa.delete_if(&:empty?)%>
+
+
 <%#@words_array = @client.home_timeline.collect{|x| x[:text]}%>
 <%#=@words_array%>
 
-<%string = @words_array.join(" ")%> 
+<%string = @sfa.join(" ")%> 
 <%array_again=string.split%>
 <%array_again%><br>
 <p id="tweetheading">your most recent tweets</p>
