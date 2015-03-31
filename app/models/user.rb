@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
        name = omniauth_data["info"]["name"].split
        user = User.create(provider: :twitter,
                           uid: omniauth_data["uid"],
-                          first_name: name[0],
+                          first_name: omniauth_data["nickname"],
                           last_name: name[1],
                           twitter_consumer_token: omniauth_data["credentials"]["token"],
                           twitter_consumer_secret: omniauth_data["credentials"]["secret"],

@@ -12,10 +12,6 @@ body{
   text-indent: 50px;
 }
 
-#scootleft{
-  float:left;
-}
-
 #scootright{
   float: right;
 }
@@ -26,15 +22,7 @@ body{
   margin-bottom:10px;
 }
 
-#signinsignout{
-  padding-top:10px;
-  padding-right:10px;
 
-}
-
-.navbar{
-  padding-bottom: 10px;
-}
 
 #imagemod{
   height:105px;
@@ -66,14 +54,21 @@ color:gray;
 }
 
 #keys1{
-  font-size:20px;
+  font-size:10px;
   color:white;
 }
 
 #mainmessage{
   color:white;
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
+  width:300px;
+  height:50px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-top: -25px;
+  margin-left: -150px;
 }
 
 .center{
@@ -82,7 +77,7 @@ color:gray;
 
 .tweetwords{
   text-align: justify;
-  border: 1px solid white;
+  border:1px solid white;
 }
 
 .sidenav{
@@ -91,6 +86,29 @@ color:gray;
 }
 
 #tweetheading{
-font-size: 100px;
-color:gray;
+font-size: 50px;
+color:white;
 }
+
+
+.navbar{
+  border-radius: 0px;
+}
+
+
+.imagepos{
+  padding-top: 2px;
+}
+
+
+
+#hashtag{
+  color:gray;
+  font-size: 40px
+}
+
+#tweettouser{
+  color:gray;
+  font-size:30px;
+}
+

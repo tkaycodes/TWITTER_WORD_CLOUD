@@ -1,18 +1,50 @@
 <%@words_array = @client.user_timeline.collect{|x| x[:text]}%>
-<%@sfa=@words_array.shuffle!%>
-<%@sfa.map! {|x| x.gsub(/(?:f|ht)tps?:\/[^\s]+/, "") } %>
-<%@sfa.delete_if(&:empty?)%>
+<%@words_array%> <hr>
+
+<%string = @words_array.join(" ")%><hr>
+<%array_again=string.split%><hr>
+<%array_again.shuffle!%><hr>
+
+<%array_again%><hr>
+
+<%array_again.map!{|x| x.gsub(/^https?:\/\/(.*)/, " ") }%><hr>
+<%array_again.map!{|x| x.gsub(/\.$/, " ") }%><hr>
+<%array_again.map!{|x| x.gsub(/^\./, " ") }%><hr>
+<%array_again.map!{|x| x.strip}%><hr>
+<%array_again.map!{|x| x.gsub(/^\(/, " ") }%><hr>
+<%array_again.map!{|x| x.gsub(/\)$/, " ")}%><hr>
+<%array_again.map!{|x| x.gsub(/,$/, " ") }%><hr>
+<%array_again.map!{|x| x.gsub(/:$/, " ") }%><hr>
+<%array_again.map!{|x| x.gsub(/^&amp(.*)/, "&") }%><hr>
+
+
+<%#array_again.map!{|x| x.upcase}%><hr>
+<%array_again.map!{|x| x.strip}%><hr>
+
+<%array_again.reject!{|x| x== " "|| x=="," || x==""}%><hr>
+<%array_again.map!{|x| x.strip}%><hr>
+
+<%=array_again%>
+
+<!-- new_array = randomarray.delete_if{|x| /^@/.match(x) || /^#/.match(x)} -->
+
+
+
+<%#=@words_array.shuffle!%>
+<%#=@words_array.map! {|x| x.gsub(/(?:f|ht)tps?:\/[^\s]+/, " ") } %><hr>
+<!-- <%#=@words_array.delete_if(&:empty?)%><hr> -->
 
 
 <%#@words_array = @client.home_timeline.collect{|x| x[:text]}%>
 <%#=@words_array%>
 
-<%string = @sfa.join(" ")%> 
-<%array_again=string.split%>
-<%array_again%><br>
+
+
+
 <p id="tweetheading">your most recent tweets</p>
+<p>word cloud based on your most recent tweets|<%=link_to "your home feed", tweets_path(homefeed: true)%></p> 
+
 <hr>
-<%=link_to "HOME FEED", tweets_path(homefeed: true)%>
 
 
 <%word_count_hash = Hash.new (0)%>
@@ -22,7 +54,7 @@
 
 <div>
 
-<div class="container tweetwords">
+ <div class="container tweetwords"> 
 <%word_count_hash.each do |k,v|%>
     <%if v>5%>
         <span id='largekeys'><%=k%></span>
@@ -33,13 +65,20 @@
     <%elsif v==3%>
         <span id='keys3'><%=k%></span>
     <%elsif v==2%>
-        <span id='keys2'><%=k%></span>
+         <span id='keys2'><%=k%></span> 
     <%else%>
-        <span id="keys1"><%=k%></span>
+    <span id="keys1"><%=k%></span> 
   <%end%>
+      <%if (/^@(.*)/).match(k)%>
+      <span id="tweettouser"><%=k%></span>
+      <%end%>
+      <%if (/^#(.*)/).match(k)%>
+      <span id="hashtag"><%=k%></span>
+      <%end%>
+
 <%end%>
-</div>
 
 
 
+/^#(.*)/.match(x)
 

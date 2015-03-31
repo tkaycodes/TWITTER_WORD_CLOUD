@@ -1,13 +1,14 @@
-<div id= "mainmessage">
-LOGIN WITH YOUR TWITTER TO SEE YOUR PERSONAL TWEET CLOUD
+<div id="mainmessage">
+<span id="mainmessage2">Tweet Cloud</span><i class="fa fa-cloud"></i><br>
+<%if user_signed_in? %>
+Connected as: &nbsp;@<%=current_user.first_name%> <%=link_to "View Tweet Cloud", tweets_path%>
+<%else%>
+<%=link_to "Connect Twitter", user_omniauth_authorize_path(provider: :twitter),{class: "linkhover"}%> 
+<%end%>
 </div>
  
-      
 
-<%if user_signed_in? %>
-<div class="center">
-  <div class="btn btn-default">
-  <%=link_to "tweet cloud", tweets_path%>
-  </div>
-</div>
-<%end%>
+            
+
+
+ 
