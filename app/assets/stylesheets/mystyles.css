@@ -55,7 +55,7 @@ color:gray;
 
 #keys1{
   font-size:10px;
-  color:white;
+  color:gray;
 }
 
 #mainmessage{
@@ -103,12 +103,12 @@ color:white;
 
 
 #hashtag{
-  color:gray;
-  font-size: 40px
+  color:white;
+  font-size: 50px
 }
 
 #tweettouser{
-  color:gray;
+  color:white;
   font-size:30px;
 }
 
