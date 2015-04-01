@@ -1,38 +1,6 @@
-<%@words_array = @client.home_timeline.collect{|x| x[:text]}%>
+<p id="tweetheading">your twitter home feed recent tweets</p>
+<p>word cloud based on:  |your home feed|<%=link_to "your most recent tweets", tweets_path%></p><hr>
+
+<%=render partial: 'tweets', locals: {array: @modified_homepage_array}%>
 
 
-<%string = @words_array.join(" ")%> 
-<%array_again=string.split%>
-<%array_again%><br>
-<p id="tweetheading">tweets from your homefeed</p>
-<p>word cloud based on your twitter home feed|<%=link_to "your most recent tweets", tweets_path%>
-</p>
-
-<hr>
-
-
-
-<%word_count_hash = Hash.new (0)%>
-<%array_again.each do |x|%>
-<%word_count_hash[x] +=1 %>
-<%end%>
-
-<div>
-
-<div class="container tweetwords">
-<%word_count_hash.each do |k,v|%>
-    <%if v>5%>
-        <span id='largekeys'><%=k%></span>
-    <%elsif v ==5%>
-        <span id='keys5'><%=k%></span>
-    <%elsif v == 4%>
-        <span id='keys4'><%=k%></span>
-    <%elsif v==3%>
-        <span id='keys3'><%=k%></span>
-    <%elsif v==2%>
-        <span id='keys2'><%=k%></span>
-    <%else%>
-        <span id="keys1"><%=k%></span>
-  <%end%>
-<%end%>
-</div>

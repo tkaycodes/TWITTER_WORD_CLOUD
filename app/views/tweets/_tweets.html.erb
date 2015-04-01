@@ -1,0 +1,28 @@
+<%word_count_hash = Hash.new (0)%>
+    <%array.each do |x|%>
+        <%word_count_hash[x] +=1 %>
+    <%end%>
+
+<div class="container tweetwords"> 
+    <%word_count_hash.each do |k,v|%>
+        <%if v>5%>
+            <span id='largekeys'><%=k%></span>
+        <%elsif v ==5%>
+            <span id='keys5'><%=k%></span>
+        <%elsif v == 4%>
+            <span id='keys4'><%=k%></span>
+        <%elsif v==3%>
+            <span id='keys3'><%=k%></span>
+        <%elsif v==2%>
+            <span id='keys2'><%=k%></span> 
+        <%else%>
+            <span id="keys1"><%=k%></span> 
+        <%end%>
+        <%if (/^@(.*)/).match(k)%>
+            <span id="tweettouser"><%=k%></span>
+        <%end%>
+        <%if (/^#(.*)/).match(k)%>
+            <span id="hashtag"><%=k%></span>
+        <%end%>
+    <%end%>
+</div>
